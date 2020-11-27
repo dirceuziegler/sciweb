@@ -111,7 +111,7 @@ if (isset($_SESSION['username'])) {
                         //console.log('success:' + data);
                         // console.log('returnurl:' + <?= $returnURL ?>);
                         <?php
-                        echo 'window.location.href = ' . $returnURL . ';'
+                        echo "window.location.href = '${returnURL}';"
                         ?>
                     })
                     .fail(function(jqXHR, textStatus, errorThrown) {

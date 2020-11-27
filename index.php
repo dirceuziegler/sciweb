@@ -27,22 +27,6 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
       height: 60px;
       width: auto;
     }
-
-    .w-10 {
-      width: 10%;
-    }
-
-    .w-20 {
-      width: 20%;
-    }
-
-    .w-70 {
-      width: 70%;
-    }
-
-    .w-60 {
-      width: 60%;
-    }
   </style>
 </head>
 
@@ -187,16 +171,16 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
   </div>
 
   <!-- footer -->
-  <div class="d-flex sectop p-3 w-100 mt-5">
-    <div class="p-3 w-20">
-      <img class="logo" src="img/logo80-200.png" />
-    </div>
-    <div class="p-2 pl-5 align-self-center text-center w-60">
-      <h6 class="my-0">Gênesis Sistemas de Cadastro e Desenvolvimento de Software EIRELE</h6>
-      <h6 class="text-muted small">Sistema de Cadastro Inteligente</h6>
-    </div>
-    <div class="ml-auto align-self-center p-2 w-20">
-      <div class="text-center text-sm-left">
+  <div class="container-fluid sectop">
+    <div class="row p-3 mt-5">
+      <div class="p-3">
+        <img class="logo" src="img/logo80-200.png" />
+      </div>
+      <div class="flex-grow-1 align-self-center p-3 text-center">
+        <h6 class="my-0">Gênesis Sistemas de Cadastro e Desenvolvimento de Software EIRELE</h6>
+        <h6 class="text-muted small">Sistema de Cadastro Inteligente</h6>
+      </div>
+      <div class="ml-auto align-self-center p-3">
         <span class="fa fa-mobile fa-fw text-muted"></span>
         <span class="text-muted small">(31) 98718-5694</span>
         <br>
@@ -209,6 +193,7 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
     </div>
   </div>
 
+  <!-- copyright -->
   <div class="d-flex bg-primary p-2 w-100 justify-content-center">
     <p class="small my-0 text-white">Copyright &copy; 2020 by Genesis SCI. Todos os direitos reservados.</p>
   </div>
@@ -232,15 +217,15 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
       });
       $("#link_bci").on("click", function(e) {
         e.preventDefault();
-        window.location.href = "sign-in?returnURL=%2Fbci%2F";
+        window.location.href = "sign-in?returnURL=%2Fsciweb%2Fbci%2F";
       });
       $("#link_vfqi").on("click", function(e) {
         e.preventDefault();
-        window.location.href = "sign-in?returnURL=%2Fvfqi%2F";
+        window.location.href = "sign-in?returnURL=%2Fsciweb%2Fvfqi%2F";
       });
       $("#link_loteam").on("click", function(e) {
         e.preventDefault();
-        window.location.href = "sign-in?returnURL=%2Floteam%2F";
+        window.location.href = "sign-in?returnURL=%2Fsciweb%2Floteam%2F";
       });
     });
   </script>
