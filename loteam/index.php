@@ -1,12 +1,5 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sciweb/sign-in/check_auth.php');
-
-// // if (!isset($_SESSION['user_id'])) {
-// //   die(header('location: login.html'));
-// // }
-// $pagecontents = file_get_contents("NOMORE_index.html");
-// //$pagecontents = file_get_contents($_SERVER['DOCUMENT_ROOT']."/path/to/file.html");
-// echo $pagecontents;
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +19,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/sciweb/sign-in/check_auth.php');
       crossorigin="anonymous"
     />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="img/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="../img/favicon.ico" rel="icon" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap"
       rel="stylesheet"
@@ -78,7 +71,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/sciweb/sign-in/check_auth.php');
   
     <div class="d-flex sectop">
       <div class="p-3">
-        <img class="logo" src="./img/logotipo.png" />
+        <img class="logo" src="../img/logotipo.png" />
       </div>
       <div class="p-2 pl-5 align-self-center">
         <h3>Loteamentos<br /></h3>

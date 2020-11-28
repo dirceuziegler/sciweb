@@ -19,7 +19,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/sciweb/sign-in/check_auth.php');
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link href="img/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="../img/favicon.ico" rel="icon" type="image/x-icon" />
   <link
     href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap"
     rel="stylesheet"
@@ -72,7 +72,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/sciweb/sign-in/check_auth.php');
 
   <div class="d-flex sectop">
     <div class="p-3">
-      <img class="logo" src="./img/logotipo.png" />
+      <img class="logo" src="../img/logotipo.png" />
     </div>
     <div class="p-2 pl-5">
       <h3>BCI<br><small>Boletim de Cadastro Imobiliário</small></h3>
