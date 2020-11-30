@@ -11,23 +11,10 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>Genesis SCIWeb</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
   <link href="img/favicon.ico" rel="icon" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: Roboto;
-    }
-
-    .sectop {
-      background-color: aliceblue;
-    }
-
-    .logo {
-      height: 60px;
-      width: auto;
-    }
-  </style>
+  <link rel="stylesheet" href="/sciweb/assets/css/style.css" />
 </head>
 
 <body>
@@ -44,8 +31,8 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
       <span class="navbar-text ml-auto py-0">
         <a id="link_login" class="nav-link" href="javascript:void()">
           <?php
-          if (isset($_SESSION['username'])) {
-            echo 'Logout (<i class="fa fa-user"></i> ' . $_SESSION['username'] . ') <i class="fa fa-sign-out"></i>';
+          if (isset($_SESSION['USERNAME'])) {
+            echo 'Logout (<i class="fa fa-user"></i> ' . $_SESSION['USERNAME'] . ') <i class="fa fa-sign-out"></i>';
           } else {
             echo 'Login <i class="fa fa-sign-in"></i>';
           }
@@ -201,6 +188,25 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js" integrity="sha512-7yA/d79yIhHPvcrSiB8S/7TyX0OxlccU8F/kuB8mHYjLlF1MInPbEohpoqfz0AILoq5hoD7lELZAYYHbyeEjag==" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+  <script>
+    var time = new Date().getTime();
+    $(document.body).bind("mousemove keypress", function(e) {
+      time = new Date().getTime();
+    });
+
+    function refresh() {
+      if (new Date().getTime() - time >= 5 * 60 * 1000) { // minutes
+        //window.location.reload(true);
+        window.location.href="sign-in?returnURL=%2Fsciweb%2F&request=logout";
+      } else {
+        setTimeout(refresh, 60000); // 1 min = 60 * 1000 milliseconds
+      }
+    }
+    setTimeout(refresh, 60000); // milliseconds
+  </script>
+
+
   <script>
     $(document).ready(function() {
       $("#link_login").on("click", function(e) {
@@ -208,7 +214,7 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
         // window.location.href = "sign-in?returnurl=http%3A%2F%2Flocalhost%2Fsciweb";
         // window.location.href = "sign-in?returnURL=%2Fsciweb%2F";
         <?php
-        if (isset($_SESSION['username'])) {
+        if (isset($_SESSION['USERNAME'])) {
           echo 'window.location.href = "sign-in?returnURL=%2Fsciweb%2F&request=logout";';
         } else {
           echo 'window.location.href = "sign-in?returnURL=%2Fsciweb%2F";';

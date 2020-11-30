@@ -16,40 +16,111 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap"
+    />
+    <style>
+      body {
+        font-family: Roboto;
+      }
+
+      .bd-highlight {
+        background-color: rgba(86, 61, 124, 0.15);
+        border: 1px solid rgba(86, 61, 124, 0.15);
+      }
+
+      nav.navbar,
+      a.nav-link {
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+      }
+    </style>
   </head>
   <body>
+
     <!-- navbar -->
-    <div class="navbar navbar-expand navbar-dark bg-dark">
-      <a href="javascript:void()" class="navbar-brand">Horizontal Cards</a>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <button
+        class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" href="javascript:void()">
+            <i class="fa fa-home"></i>
+            Home <span class="sr-only">(current)</span>
+          </a>
+        </div>
+        <span class="navbar-text ml-auto">
+          <a id="link_login" class="nav-link" href="javascript:void()">Login</a>
+        </span>
+      </div>
+    </nav>
+
+    <div class="d-flex bd-highlight mt-2">
+      <div class="p-2 bd-highlight">Flex item 1</div>
+      <div class="p-2 flex-grow-1 text-center bd-highlight">Flex item 2</div>
+      <div class="ml-auto p-2 bd-highlight">Flex item 3</div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row d-flex bd-highlight mt-2">
+        <div class="p-2 col-md-2 bd-highlight pl-5">Flex item 1</div>
+        <div class="p-2 col-md-8 text-center bd-highlight">Flex item 2 Flex item 2 Flex item 2</div>
+        <div class="ml-auto p-2 col-md-2 bd-highlight text-right pr-5">Flex item 3</div>
+      </div>
     </div>
 
     <!-- container -->
     <div class="container mt-5">
-        <!-- cards -->
-        <div class="card">
-            <div class="row">
-                <div class="col-4 p-2">
-                    <img src="../img/tmb_bci_1.jpg" class="img-fluid m-2" alt="BCI" srcset="">
-                </div>
-                <div class="col-8 p-5">
-                    <h3 class="card-title mt-2">Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit explicabo, ullam cum deleniti repellendus recusandae illum pariatur voluptates consectetur expedita aliquam, molestias exercitationem omnis odio quasi quibusdam eveniet ratione! Ipsa.</p>
-                    <button class="btn btn-primary">Read More</button>
-                </div>
-            </div>
+      <!-- cards -->
+      <div class="card">
+        <div class="row">
+          <div class="col-4 p-2">
+            <img
+              src="../img/tmb_bci_1.jpg"
+              class="img-fluid m-2"
+              alt="BCI"
+              srcset=""
+            />
+          </div>
+          <div class="col-8 p-5">
+            <h3 class="card-title mt-2">Lorem ipsum</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+              explicabo, ullam cum deleniti repellendus recusandae illum
+              pariatur voluptates consectetur expedita aliquam, molestias
+              exercitationem omnis odio quasi quibusdam eveniet ratione! Ipsa.
+            </p>
+            <button class="btn btn-primary">Read More</button>
+          </div>
         </div>
-        <div class="card">
-            <div class="row">
-                <div class="col-4">
-                    <img src="../img/tmb_fqi_1.jpg" class="img-fluid m-2" alt="BCI" srcset="">
-                </div>
-                <div class="col-8">
-                    <h3 class="card-title mt-2">Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit explicabo, ullam cum deleniti repellendus recusandae illum pariatur voluptates consectetur expedita aliquam, molestias exercitationem omnis odio quasi quibusdam eveniet ratione! Ipsa.</p>
-                    <button class="btn btn-primary">Read More</button>
-                </div>
-            </div>
+      </div>
+      <div class="card">
+        <div class="row">
+          <div class="col-4">
+            <img
+              src="../img/tmb_fqi_1.jpg"
+              class="img-fluid m-2"
+              alt="BCI"
+              srcset=""
+            />
+          </div>
+          <div class="col-8">
+            <h3 class="card-title mt-2">Lorem ipsum</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+              explicabo, ullam cum deleniti repellendus recusandae illum
+              pariatur voluptates consectetur expedita aliquam, molestias
+              exercitationem omnis odio quasi quibusdam eveniet ratione! Ipsa.
+            </p>
+            <button class="btn btn-primary">Read More</button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- scripts -->

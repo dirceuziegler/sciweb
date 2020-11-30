@@ -1,10 +1,11 @@
 <?php
-
+require($_SERVER['DOCUMENT_ROOT'] . '/sciweb/inc/vertime.php');
+//
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     header($_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found', TRUE, 404);
     die(header('location: index.html'));
 }
-#
+//
 list_loteam_pdf();
 
 #------------------------------------------------------------------------------

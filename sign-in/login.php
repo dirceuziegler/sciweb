@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/sciweb/sign-in/check_auth.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/sciweb/inc/check_auth.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sciweb/inc/dbconfig.php');
 //
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
@@ -49,7 +49,8 @@ try{
     } 
     //
     if (($inputUser == $row['username']) && (MD5($inputPassword) == $row['password'])) {
-        $_SESSION['username'] = $inputUser;
+        $_SESSION['USERNAME']  = $inputUser;
+        $_SESSION['LAST_ACTIVITY'] = $_SERVER['REQUEST_TIME'];;
         exit('Ok');
     } else {
         throw new Exception('Acesso negado: Usuário não cadastrado.');

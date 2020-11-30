@@ -1,4 +1,5 @@
 <?php
+require($_SERVER['DOCUMENT_ROOT'] . '/sciweb/inc/vertime.php');
 
 $indcad = '';
 $pdfpath = '';

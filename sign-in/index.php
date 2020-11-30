@@ -1,11 +1,11 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/sciweb/sign-in/check_auth.php');
-
+require_once($_SERVER['DOCUMENT_ROOT'] . '/sciweb/inc/check_auth.php');
+//
 $returnURL = '/sciweb/';
 if (isset($_GET['returnURL'])) {
     $returnURL = $_GET['returnURL'];
 }
-
+//
 if (isset($_GET['request'])) {
     $request = $_GET['request'];
     if ($request == 'logout') {
@@ -13,8 +13,8 @@ if (isset($_GET['request'])) {
         die(header('location: /sciweb/'));
     }
 }
-
-if (isset($_SESSION['username'])) {
+//
+if (isset($_SESSION['USERNAME'])) {
     die(header('location: ' . $returnURL));
 }
 ?>
@@ -31,6 +31,8 @@ if (isset($_SESSION['username'])) {
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
+    <link href="../img/favicon.ico" rel="icon" type="image/x-icon" />
 
     <style>
         .bd-placeholder-img {
@@ -47,15 +49,10 @@ if (isset($_SESSION['username'])) {
                 font-size: 3.5rem;
             }
         }
-
-        body {
-            font-family: Roboto;
-        }
     </style>
     <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet" />
-    <link href="../img/favicon.ico" rel="icon" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/sciweb/assets/css/style.css">
+    <link rel="stylesheet" href="/sciweb/assets/css/signin.css">
 </head>
 
 <body class="text-center">
