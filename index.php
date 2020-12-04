@@ -77,12 +77,10 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
       <!-- Folha de Quadra -->
       <div class="card">
         <a id="link_vfqi" class="text-decoration-none text-dark" href="javascript:void()">
-          <!-- <h5 class="card-header">Plantas de Quadra</h5> -->
           <img class="card-img-top border" src="img/tmb_fqi_1.jpg" alt="Plantas de Quadra" />
           <div class="card-body">
             <h5 class="card-title">Plantas de Quadra</h5>
             <h6 class="card-subtitle mb-2 text-muted">Imagens</h6>
-            <!-- <p class="card-text">Consulta e visualização das Plantas de Quadra.</p> -->
           </div>
         </a>
       </div>
@@ -90,11 +88,9 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
       <!-- Loteamento -->
       <div class="card">
         <a id="link_loteam" class="text-decoration-none text-dark" href="javascript:void()">
-          <!-- <h5 class="card-header">Loteamentos</h5> -->
           <img class="card-img-top border" src="img/tmb_lotea_1.jpg" alt="Loteamentos" />
           <div class="card-body">
             <h5 class="card-title">Loteamentos</h5>
-            <!-- <p class="card-text">Consulta e visualização de plantas de Loteamentos.</p> -->
           </div>
         </a>
       </div>
@@ -103,7 +99,6 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
         <img src="img/bk.png" class="card-img-top border" alt="Soon..." />
         <div class="card-body">
           <h5 class="card-title">Kommt bald</h5>
-          <!-- <p class="card-text">Coming soon.</p> -->
         </div>
       </div>
 
@@ -111,10 +106,8 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
         <img src="img/bk.png" class="card-img-top border" alt="Soon..." />
         <div class="card-body">
           <h5 class="card-title">Bientôt disponible</h5>
-          <!-- <p class="card-text">Coming soon.</p> -->
         </div>
       </div>
-
 
     </div>
   </div>
