@@ -63,14 +63,12 @@ create_navbar();
             <select id="searchoptions" class="custom-select custom-select-sm mb-1">
               <option disabled selected>Search Options</option>
               <option>Option 1</option>
-              <option>Option 2</option>
-              <option>Option 3</option>
+              <option>Índice Cadastral</option>
+              <option>Endereço</option>
+              <option>Proprietário</option>
             </select>
             <select id="searchresults" class="custom-select custom-select-sm">
               <option disabled selected>Results</option>
-              <option>Result 1</option>
-              <option>Result 2</option>
-              <option>Result 3</option>
             </select>
         </form>
       </div>
@@ -115,24 +113,24 @@ create_navbar();
     </div>
   </div>
 
-  <!-- Modal 2 -->
-  <div class="modal fade" tabindex="-1" role="dialog" id="myModal_2" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog  modal-dialog-centered" role="document">
+  <!-- Modal Indcad -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modIndcad" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog  modal-dialog-centered modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Modal Dialog 2</h4>
+          <h4 class="modal-title">Índice Cadastral</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
 
-          <form id="f_form_2">
+          <form id="formIndcad">
             <div class="form-group row">
-              <label for="distrito" class="col-sm-2 col-form-label">Distrito</label>
-              <div class="col-sm-10">
+              <label for="distrito" class="col-sm-4 col-form-label">Distrito</label>
+              <div class="col-sm-8">
                 <select id="distrito" class="form-control custom-select custom-select-sm" name="distrito">
-                  <option disabled selected>Distritos</option>
+                  <option disabled selected>Distrito</option>
                   <option>01</option>
                   <option>02</option>
                   <option>03</option>
@@ -140,8 +138,8 @@ create_navbar();
               </div>
             </div>
             <div class="form-group row">
-              <label for="zona" class="col-sm-2 col-form-label">Zona</label>
-              <div class="col-sm-10">
+              <label for="zona" class="col-sm-4 col-form-label">Zona</label>
+              <div class="col-sm-8">
                 <select id="zona" class="form-control custom-select custom-select-sm" name="zona">
                   <option disabled selected>Zona</option>
                   <option>01</option>
@@ -152,8 +150,8 @@ create_navbar();
               </div>
             </div>
             <div class="form-group row">
-              <label for="setor" class="col-sm-2 col-form-label">Setor</label>
-              <div class="col-sm-10">
+              <label for="setor" class="col-sm-4 col-form-label">Setor</label>
+              <div class="col-sm-8">
                 <select id="setor" class="form-control custom-select custom-select-sm" name="setor">
                   <option disabled selected>Setor</option>
                   <option>01</option>
@@ -164,8 +162,8 @@ create_navbar();
               </div>
             </div>
             <div class="form-group row">
-              <label for="quadra" class="col-sm-2 col-form-label">Quadra</label>
-              <div class="col-sm-10">
+              <label for="quadra" class="col-sm-4 col-form-label">Quadra</label>
+              <div class="col-sm-8">
                 <select id="quadra" class="form-control custom-select custom-select-sm" name="quadra">
                   <option disabled selected>Quadra</option>
                   <option>001</option>
@@ -176,8 +174,8 @@ create_navbar();
               </div>
             </div>
             <div class="form-group row">
-              <label for="Lote" class="col-sm-2 col-form-label">Lote</label>
-              <div class="col-sm-10">
+              <label for="Lote" class="col-sm-4 col-form-label">Lote</label>
+              <div class="col-sm-8">
                 <select id="lote" class="form-control custom-select custom-select-sm" name="lote">
                   <option disabled selected>Lote</option>
                   <option>0001</option>
@@ -192,36 +190,134 @@ create_navbar();
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" id="btn_ok_2" class="btn btn-outline-secondary" data-dismiss="modal">OK</button>
+          <button type="button" id="btnOkIndcad" class="btn btn-outline-secondary" data-dismiss="modal">OK</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Modal 3 -->
-  <div class="modal fade" tabindex="-1" role="dialog" id="myModal_3" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog  modal-dialog-centered" role="document">
+  <!-- Modal Address -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modAddress" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog  modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Modal Dialog 3</h4>
+          <h4 class="modal-title">Endereço</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <!-- <p id="error"></p> -->
-          <form id="f_form_3">
-            <label for="indcad" class="mr-sm-2">Índice Cadastral:</label>
-            <input type="text" class="form-control mb-2 mr-sm-2" placeholder="DD.ZZ.SS.QQQ.LLLL" id="indcad" name="indcad" />
+          <form id="formAddress">
+
+            <div class="form-group row">
+              <label for="termoAddress" class="col-sm-2 col-form-label">Termo</label>
+              <div class="col-sm-10">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Procurar por ..." id="termoAddress" name="termoAddress">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="btnTermoAddress">Procurar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="logradouro" class="col-sm-2 col-form-label">Logradouro</label>
+              <div class="col-sm-10">
+                <select id="logradouro" class="form-control custom-select custom-select-sm" name="logradouro">
+                  <option disabled selected>Logradouro</option>
+                  <option>01</option>
+                  <option>02</option>
+                  <option>03</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="numero" class="col-sm-2 col-form-label">Número</label>
+              <div class="col-sm-4">
+                <select id="numero" class="form-control custom-select custom-select-sm" name="numero">
+                  <option disabled selected>Número</option>
+                  <option>01</option>
+                  <option>02</option>
+                  <option>03</option>
+                </select>
+              </div>
+            </div>
+
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" id="btn_ok_3" class="btn btn-outline-secondary" data-dismiss="modal">OK</button>
+          <button type="button" id="btnOkAddress" class="btn btn-outline-secondary" data-dismiss="modal">OK</button>
         </div>
       </div>
     </div>
   </div>
+
+
+  <!-- Modal Owner -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modOwner" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog  modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Proprietário</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="formOwner">
+
+            <div class="form-group row">
+              <label for="termoOwner" class="col-sm-2 col-form-label">Termo</label>
+              <div class="col-sm-10">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Procurar por ..." id="termoOwner" name="termoOwner">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="btnTermoOwner">Procurar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="owner" class="col-sm-2 col-form-label">Proprietário</label>
+              <div class="col-sm-10">
+                <select id="owner" class="form-control custom-select custom-select-sm" name="owner">
+                  <option disabled selected>Proprietário</option>
+                  <option>01</option>
+                  <option>02</option>
+                  <option>03</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="logradouro" class="col-sm-2 col-form-label">Endereço</label>
+              <div class="col-sm-10">
+                <select id="address" class="form-control custom-select custom-select-sm" name="address">
+                  <option disabled selected>Logradouro</option>
+                  <option>01</option>
+                  <option>02</option>
+                  <option>03</option>
+                </select>
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" id="btnOkOwner" class="btn btn-outline-secondary" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -240,39 +336,65 @@ create_navbar();
       $('select#searchoptions').on('change', function(e) {
         const opt = $('select#searchoptions').find('option:selected').val();
         //
-        $("#inputEmail1,#inputPassword1,#indcad").each(function() {
+        $('#inputEmail1,#inputPassword1,#termoOwner,#termoAddress').each(function() {
           $(this).val('');
         });
-        $("select#distrito,select#zona,select#setor,select#quadra,select#lote").each(function() {
-          $(this).val('');
+        $('select#distrito,select#zona,select#setor,select#quadra,select#lote').each(function() {
+          $("option[selected]", this).removeAttr('selected');
+          $("option:first", this).attr('selected','selected');    
         });
+
+        $('select#logradouro,select#numero').each(function() {
+          $("option[selected]", this).removeAttr('selected');
+          $("option:first", this).attr('selected','selected');    
+        });
+
+        $('select#owner,select#address').each(function() {
+          $("option[selected]", this).removeAttr('selected');
+          $("option:first", this).attr('selected','selected');    
+        });
+
+        //
+        // $("#distrito option[selected]").removeAttr("selected");
+        // $("#distrito option:first").attr("selected","selected");    
         //
         if (opt == 'Option 1') {
           $('#myModal_1').modal('show');
-        } else if (opt == 'Option 2') {
-          $('#myModal_2').modal('show');
-        } else if (opt == 'Option 3') {
-          $('#myModal_3').modal('show');
+        } else if (opt == 'Índice Cadastral') {
+          $('#modIndcad').modal('show');
+        } else if (opt == 'Endereço') {
+          $('#modAddress').modal('show');
+        } else if (opt == 'Proprietário') {
+          $('#modOwner').modal('show');
         } else {
           console.log(opt);
         }
       });
 
-      // $("#btn_ok_3").on('click', function (e) {
+      // $("#btnOkAddress").on('click', function (e) {
       //   console.log(e);
-      //   console.log($("#f_form_3").serialize());
+      //   console.log($("#formAddress").serialize());
       // })
 
-      $("#myModal_1").on("click", "#btn_ok_1", function(){
-        console.log($("#f_form_1").serialize());
+      // $("#myModal_1").on("click", "#btn_ok_1", function() {
+      //   console.log($("#f_form_1").serialize());
+      // });
+
+      document.querySelector("#myModal_1 #btn_ok_1")
+        .addEventListener('click', function(e) {
+          console.log($("#f_form_1").serialize());
       });
 
-      $("#myModal_2").on("click", "#btn_ok_2", function(){
-        console.log($("#f_form_2").serialize());
+      $("#modIndcad").on("click", "#btnOkIndcad", function() {
+        console.log($("#formIndcad").serialize());
       });
 
-      $("#myModal_3").on("click", "#btn_ok_3", function(){
-        console.log($("#f_form_3").serialize());
+      $("#modAddress").on("click", "#btnOkAddress", function() {
+        console.log($("#formAddress").serialize());
+      });
+
+      $("#modOwner").on("click", "#btnOkOwner", function() {
+        console.log($("#formOwner").serialize());
       });
 
       // $('select#searchoptions').on('focus', function(e) {
