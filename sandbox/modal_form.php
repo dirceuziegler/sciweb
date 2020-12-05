@@ -20,38 +20,45 @@
 
 <body>
 
-  <nav class="navbar navbar-expand navbar-dark bg-primary py-0">
+  <!-- navbar -->
+  <!-- <nav class="navbar navbar-expand navbar-dark bg-primary py-0">
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a id="link_home" class="nav-link" href="javascript:void()">
+          <a id="link_home" class="nav-link" href="javascript:void(0)">
             <i class="fa fa-home"></i>
             Home <span class="sr-only">(current)</span></a>
         </li>
       </ul>
       <span class="navbar-text ml-auto py-0">
-        <a id="link_login" class="nav-link" href="javascript:void()">
+        <a id="link_login" class="nav-link" href="javascript:void(0)">
           <?php
-          if (isset($_SESSION['USERNAME'])) {
-            echo 'Logout (<i class="fa fa-user"></i> ' . $_SESSION['USERNAME'] . ') <i class="fa fa-sign-out"></i>';
-          } else {
-            echo 'Login <i class="fa fa-sign-in"></i>';
-          }
+          // if (isset($_SESSION['USERNAME'])) {
+          //   echo 'Logout (<i class="fa fa-user"></i> ' . $_SESSION['USERNAME'] . ') <i class="fa fa-sign-out"></i>';
+          // } else {
+          //   echo 'Login <i class="fa fa-sign-in"></i>';
+          // }
           ?>
         </a>
       </span>
     </div>
-  </nav>
+  </nav> -->
 
+<?php
+require($_SERVER['DOCUMENT_ROOT'] . '/sciweb/inc/reuse.php');
+create_navbar();
+?>
+
+  <!-- header -->
   <div class="container-fluid sectop align-items-stretch">
     <div class="row">
-      <div class="col-md-3 p-3">
-        <img class="img-fluid" src="../img/logotipo.png" />
+      <div class="col-md-2 p-3">
+        <img class="img-fluid logo" src="../img/logotipo.png" />
       </div>
-      <div class="col-md-5 p-3 my-auto">
+      <div class="col-md-6 p-3 pl-4 my-auto">
         <h3>Modal Form</h3>
       </div>
-      <div class="col-md-4 p-3 my-auto">
+      <div class="col-md-4 p-1 px-3 my-auto">
         <form id="f_searchoptions">
             <select id="searchoptions" class="custom-select custom-select-sm mb-1">
               <option disabled selected>Search Options</option>
@@ -81,12 +88,28 @@
           </button>
         </div>
         <div class="modal-body">
-          <p id="error"></p>
+
+          <form id="f_form_1">
+            <div class="form-group row">
+              <label for="inputEmail1" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail1" name="inputEmail1" 
+                autocomplete="username" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword1" class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword1" name="inputPassword1" 
+                  autocomplete="current-password" placeholder="Password">
+              </div>
+            </div>
+          </form>
+
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">
-            Ok
-          </button>
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" id="btn_ok_1" class="btn btn-outline-secondary" data-dismiss="modal">OK</button>
         </div>
       </div>
     </div>
@@ -103,12 +126,73 @@
           </button>
         </div>
         <div class="modal-body">
-          <p id="error"></p>
+
+          <form id="f_form_2">
+            <div class="form-group row">
+              <label for="distrito" class="col-sm-2 col-form-label">Distrito</label>
+              <div class="col-sm-10">
+                <select id="distrito" class="form-control custom-select custom-select-sm" name="distrito">
+                  <option disabled selected>Distritos</option>
+                  <option>01</option>
+                  <option>02</option>
+                  <option>03</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="zona" class="col-sm-2 col-form-label">Zona</label>
+              <div class="col-sm-10">
+                <select id="zona" class="form-control custom-select custom-select-sm" name="zona">
+                  <option disabled selected>Zona</option>
+                  <option>01</option>
+                  <option>02</option>
+                  <option>03</option>
+                  <option>04</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="setor" class="col-sm-2 col-form-label">Setor</label>
+              <div class="col-sm-10">
+                <select id="setor" class="form-control custom-select custom-select-sm" name="setor">
+                  <option disabled selected>Setor</option>
+                  <option>01</option>
+                  <option>02</option>
+                  <option>03</option>
+                  <option>04</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="quadra" class="col-sm-2 col-form-label">Quadra</label>
+              <div class="col-sm-10">
+                <select id="quadra" class="form-control custom-select custom-select-sm" name="quadra">
+                  <option disabled selected>Quadra</option>
+                  <option>001</option>
+                  <option>002</option>
+                  <option>003</option>
+                  <option>004</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="Lote" class="col-sm-2 col-form-label">Lote</label>
+              <div class="col-sm-10">
+                <select id="lote" class="form-control custom-select custom-select-sm" name="lote">
+                  <option disabled selected>Lote</option>
+                  <option>0001</option>
+                  <option>0002</option>
+                  <option>0003</option>
+                  <option>0004</option>
+                </select>
+              </div>
+            </div>
+          </form>
+
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">
-            Ok
-          </button>
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" id="btn_ok_2" class="btn btn-outline-secondary" data-dismiss="modal">OK</button>
         </div>
       </div>
     </div>
@@ -125,12 +209,15 @@
           </button>
         </div>
         <div class="modal-body">
-          <p id="error"></p>
+          <!-- <p id="error"></p> -->
+          <form id="f_form_3">
+            <label for="indcad" class="mr-sm-2">Índice Cadastral:</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" placeholder="DD.ZZ.SS.QQQ.LLLL" id="indcad" name="indcad" />
+          </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">
-            Ok
-          </button>
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" id="btn_ok_3" class="btn btn-outline-secondary" data-dismiss="modal">OK</button>
         </div>
       </div>
     </div>
@@ -152,6 +239,14 @@
       //
       $('select#searchoptions').on('change', function(e) {
         const opt = $('select#searchoptions').find('option:selected').val();
+        //
+        $("#inputEmail1,#inputPassword1,#indcad").each(function() {
+          $(this).val('');
+        });
+        $("select#distrito,select#zona,select#setor,select#quadra,select#lote").each(function() {
+          $(this).val('');
+        });
+        //
         if (opt == 'Option 1') {
           $('#myModal_1').modal('show');
         } else if (opt == 'Option 2') {
@@ -161,6 +256,23 @@
         } else {
           console.log(opt);
         }
+      });
+
+      // $("#btn_ok_3").on('click', function (e) {
+      //   console.log(e);
+      //   console.log($("#f_form_3").serialize());
+      // })
+
+      $("#myModal_1").on("click", "#btn_ok_1", function(){
+        console.log($("#f_form_1").serialize());
+      });
+
+      $("#myModal_2").on("click", "#btn_ok_2", function(){
+        console.log($("#f_form_2").serialize());
+      });
+
+      $("#myModal_3").on("click", "#btn_ok_3", function(){
+        console.log($("#f_form_3").serialize());
       });
 
       // $('select#searchoptions').on('focus', function(e) {

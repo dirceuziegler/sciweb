@@ -23,13 +23,13 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="javascript:void()">
+          <a class="nav-link" href="javascript:void(0);">
             <i class="fa fa-home"></i>
             Home <span class="sr-only">(current)</span></a>
         </li>
       </ul>
       <span class="navbar-text ml-auto py-0">
-        <a id="link_login" class="nav-link" href="javascript:void()">
+        <a id="link_login" class="nav-link" href="javascript:void(0);">
           <?php
           if (isset($_SESSION['USERNAME'])) {
             echo 'Logout (<i class="fa fa-user"></i> ' . $_SESSION['USERNAME'] . ') <i class="fa fa-sign-out"></i>';
@@ -61,7 +61,7 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
 
       <!-- BCI -->
       <div class="card">
-        <a id="link_bci" class="text-decoration-none text-dark" href="javascript:void()">
+        <a id="link_bci" class="text-decoration-none text-dark" href="javascript:void(0)">
           <!-- <h5 class="card-header">BCIs</h5> -->
           <img class="card-img-top border" src="img/tmb_bci_1.jpg" alt="BCIs" />
           <div class="card-body">
@@ -76,7 +76,7 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
 
       <!-- Folha de Quadra -->
       <div class="card">
-        <a id="link_vfqi" class="text-decoration-none text-dark" href="javascript:void()">
+        <a id="link_vfqi" class="text-decoration-none text-dark" href="javascript:void(0)">
           <img class="card-img-top border" src="img/tmb_fqi_1.jpg" alt="Plantas de Quadra" />
           <div class="card-body">
             <h5 class="card-title">Plantas de Quadra</h5>
@@ -87,7 +87,7 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
 
       <!-- Loteamento -->
       <div class="card">
-        <a id="link_loteam" class="text-decoration-none text-dark" href="javascript:void()">
+        <a id="link_loteam" class="text-decoration-none text-dark" href="javascript:void(0)">
           <img class="card-img-top border" src="img/tmb_lotea_1.jpg" alt="Loteamentos" />
           <div class="card-body">
             <h5 class="card-title">Loteamentos</h5>
