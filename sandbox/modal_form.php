@@ -66,6 +66,7 @@ create_navbar();
               <option>Índice Cadastral</option>
               <option>Endereço</option>
               <option>Proprietário</option>
+              <option>Distrito/Zona/Bairro</option>
             </select>
             <select id="searchresults" class="custom-select custom-select-sm">
               <option disabled selected>Results</option>
@@ -255,7 +256,6 @@ create_navbar();
     </div>
   </div>
 
-
   <!-- Modal Owner -->
   <div class="modal fade" tabindex="-1" role="dialog" id="modOwner" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog  modal-dialog-centered modal-lg" role="document">
@@ -315,8 +315,35 @@ create_navbar();
     </div>
   </div>
 
+  <!-- Modal Distrito/Zona/Bairro -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modDZBairro" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog  modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Distrito/Zona/Bairro</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="formDZBairro">
 
+            <select id="dzbairro" class="form-control custom-select custom-select-sm" name="dzbairro">
+              <option disabled selected>Distrito/Zona/Bairro</option>
+              <option>01</option>
+              <option>02</option>
+              <option>03</option>
+            </select>
 
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" id="btnOkDZBairro" class="btn btn-outline-secondary" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <!-- Optional JavaScript -->
@@ -354,6 +381,11 @@ create_navbar();
           $("option:first", this).attr('selected','selected');    
         });
 
+        $('select#dzbairro').each(function() {
+          $("option[selected]", this).removeAttr('selected');
+          $("option:first", this).attr('selected','selected');    
+        });
+
         //
         // $("#distrito option[selected]").removeAttr("selected");
         // $("#distrito option:first").attr("selected","selected");    
@@ -366,6 +398,8 @@ create_navbar();
           $('#modAddress').modal('show');
         } else if (opt == 'Proprietário') {
           $('#modOwner').modal('show');
+        } else if (opt == 'Distrito/Zona/Bairro') {
+          $('#modDZBairro').modal('show');
         } else {
           console.log(opt);
         }
@@ -395,6 +429,10 @@ create_navbar();
 
       $("#modOwner").on("click", "#btnOkOwner", function() {
         console.log($("#formOwner").serialize());
+      });
+
+      $("#modDZBairro").on("click", "#btnOkDZBairro", function() {
+        console.log($("#formDZBairro").serialize());
       });
 
       // $('select#searchoptions').on('focus', function(e) {
