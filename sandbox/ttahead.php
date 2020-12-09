@@ -30,7 +30,7 @@ try{
             $sql = "SELECT comp FROM public.logradouro WHERE logradouro LIKE '{$query}%';";
             break;
         default:
-            $sql = "SELECT comp FROM public.logradouro WHERE comp LIKE '%{$query}%';";
+            $sql = "SELECT comp FROM public.logradouro WHERE logradouro LIKE '%{$query}%';";
             break;
     }
     //
