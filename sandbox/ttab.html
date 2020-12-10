@@ -54,16 +54,25 @@
     <script>
         $(document).ready(function () {
 
-            // init Bloodhound
+            // //init Bloodhound
+            // var countries_suggestions = new Bloodhound({
+            //     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+            //     queryTokenizer: Bloodhound.tokenizers.whitespace,
+            //     remote: {
+            //         url: 'ttahead.php?query=%QUERY',
+            //         wildcard: '%QUERY'
+            //     },
+            //     identify: function (response) {
+            //         return response.name;
+            //     }
+            // });
+
             var countries_suggestions = new Bloodhound({
-                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                datumTokenizer: Bloodhound.tokenizers.whitespace,
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
                 remote: {
                     url: 'ttahead.php?query=%QUERY',
                     wildcard: '%QUERY'
-                },
-                identify: function (response) {
-                    return response.name;
                 }
             });
 
@@ -85,11 +94,14 @@
                     suggestion: function(item) {
                         return '<div>'+ item +'</div>';
                     }
-                },
-                updater: function(item) {
-                    console.log(item);
                 }
-            });
+                // ,
+                // updater: function(item) {
+                //     console.log(item);
+                // }
+            }).on('typeahead:select', function(ev, item) {
+                  console.log(item);
+            });            
 
         });        
     </script>
