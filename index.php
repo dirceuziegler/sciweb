@@ -65,7 +65,7 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
           <!-- <h5 class="card-header">BCIs</h5> -->
           <img class="card-img-top border" src="img/tmb_bci_1.jpg" alt="BCIs" />
           <div class="card-body">
-            <h5 class="card-title">BCIs</h5>
+            <h6 class="card-title">BCIs</h6>
             <!-- <p class="card-text">Consulta e visualização dos BCIs.</p> -->
           </div>
           <!-- <div class="card-footer">
@@ -79,7 +79,7 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
         <a id="link_vfqi" class="text-decoration-none text-dark" href="javascript:void(0)">
           <img class="card-img-top border" src="img/tmb_fqi_1.jpg" alt="Plantas de Quadra" />
           <div class="card-body">
-            <h5 class="card-title">Plantas de Quadra</h5>
+            <h6 class="card-title">Plantas de Quadra</h6>
             <h6 class="card-subtitle mb-2 text-muted">Imagens</h6>
           </div>
         </a>
@@ -90,7 +90,7 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
         <a id="link_loteam" class="text-decoration-none text-dark" href="javascript:void(0)">
           <img class="card-img-top border" src="img/tmb_lotea_1.jpg" alt="Loteamentos" />
           <div class="card-body">
-            <h5 class="card-title">Loteamentos</h5>
+            <h6 class="card-title">Loteamentos</h6>
           </div>
         </a>
       </div>
@@ -98,14 +98,15 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
       <div class="card">
         <img src="img/bk.png" class="card-img-top border" alt="Soon..." />
         <div class="card-body">
-          <h5 class="card-title">Kommt bald</h5>
+          <h6 class="card-title">Desmembramentos</h6>
         </div>
       </div>
 
       <div class="card">
         <img src="img/bk.png" class="card-img-top border" alt="Soon..." />
         <div class="card-body">
-          <h5 class="card-title">Bientôt disponible</h5>
+          <h6 class="card-title">Logradouros - Nomenclatura</h6>
+          <h6 class="card-subtitle mb-2 text-muted">Alterações / Leis</h6>
         </div>
       </div>
 

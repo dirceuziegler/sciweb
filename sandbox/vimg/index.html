@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Viewer</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.8.0/viewer.min.css"
+      integrity="sha512-i7JFM7eCKzhlragtp4wNwz36fgRWH/Zsm3GAIqqO2sjiSlx7nQhx9HB3nmQcxDHLrJzEBQJWZYQQ2TPfexAjgQ=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .docs-pictures {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        /* display: none; */
+      }
+
+      .docs-pictures > li {
+        border: 1px solid transparent;
+        float: left;
+        margin: 0 -1px -1px 0;
+        overflow: hidden;
+        width: calc(100% / 5);
+        padding: 1rem;
+      }
+
+      .docs-pictures > li > img {
+        cursor: -webkit-zoom-in;
+        cursor: zoom-in;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-8 mx-auto">
+          <ul class="docs-pictures clearfix bg-secondary my-3">
+            <!-- <li><img data-original="img/alvará.jpg" src="img/alvará_t.jpg" alt="alvara"></li>
+                    <li><img data-original="img/croqui.jpg" src="img/croqui_t.jpg" alt="croqui"></li>
+                    <li><img data-original="img/mem desc.jpg" src="img/mem desc_t.jpg" alt="mem_desc"></li>
+                    <li><img data-original="img/p.quadra anotação.jpg" src="img/p.quadra anotação_t.jpg" alt="p.quadra anotação"></li>
+                    <li><img data-original="img/p.quadra antes.jpg" src="img/p.quadra antes_t.jpg" alt="p.quadra antes"></li> -->
+
+            <li><img src="img/alvará.jpg" alt="alvara" /></li>
+            <li><img src="img/croqui.jpg" alt="croqui" /></li>
+            <li><img src="img/mem desc.jpg" alt="mem_desc" /></li>
+            <li><img src="img/p.quadra anotação.jpg" alt="p.quadra anotação" /></li>
+            <li><img src="img/p.quadra antes.jpg" alt="p.quadra antes" /></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.8.0/viewer.min.js"
+      integrity="sha512-0Wn9X6EqYvivEQ+TqPycd7e2Py2FTP6ke9/v6CWFwg0+5G9lgRV4SyR7BApYriLL8dLB1OscA+8LrYA/X6wm3w=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var pictures = document.querySelector(".docs-pictures");
+      var options = {
+        //url: 'data-original',
+        backdrop: "static",
+        rotatable: false,
+        scalable: false,
+        movable: true,
+
+        toolbar: {
+          zoomIn: 4,
+          zoomOut: 4,
+          oneToOne: 4,
+          reset: 4,
+          prev: 4,
+          play: {
+            show: false,
+            size: "large",
+          },
+          next: 4,
+          rotateLeft: false,
+          rotateRight: false,
+          flipHorizontal: false,
+          flipVertical: false,
+        },
+      };
+      var viewer = new Viewer(pictures, options);
+      //viewer.view(0);
+    </script>
+  </body>
+</html>
