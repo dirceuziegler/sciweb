@@ -193,7 +193,7 @@ $_SESSION['GENESIS_SCI_AUTH_OK'] = true;
     function refresh() {
       if (new Date().getTime() - time >= 5 * 60 * 1000) { // minutes
         //window.location.reload(true);
-        window.location.href="sign-in?returnURL=%2Fsciweb%2F&request=logout";
+        window.location.href = "sign-in?returnURL=%2Fsciweb%2F&request=logout";
       } else {
         setTimeout(refresh, 60000); // 1 min = 60 * 1000 milliseconds
       }

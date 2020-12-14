@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Load Excel Sheet in Browser using PHPSpreadsheet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet" />    
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet" />
 </head>
+
 <body>
     <div class="container">
         <br />
@@ -30,8 +32,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js" integrity="sha512-7yA/d79yIhHPvcrSiB8S/7TyX0OxlccU8F/kuB8mHYjLlF1MInPbEohpoqfz0AILoq5hoD7lELZAYYHbyeEjag==" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function(){
-            $('#load_excel_form').on('submit', function(event){
+        $(document).ready(function() {
+            $('#load_excel_form').on('submit', function(event) {
                 event.preventDefault();
                 $.ajax({
                     url: "upload.php",
@@ -40,18 +42,49 @@
                     contentType: false,
                     cache: false,
                     processData: false,
-                    success: function(data)
-                    {
+                    success: function(data) {
                         var s = JSON.parse(data)
                         $('#message').html(s[0].name)
                         $('#excel_area').html(s[0].html);
                         //$('#excel_area').html(data);
-                        $('table').css('width','100%');
-                        $('#excel_area *').css('font-family','Roboto');
+                        $('table').css('width', '100%');
+                        $('#excel_area *').css('font-family', 'Roboto');
                     }
                 })
             });
+
+            document.addEventListener('dblclick', function(e) {
+                if (e.target.matches('tr[class^=row] td[class^=column]')) {
+                    var values = $(e.target).parent().text().split('\n');
+                    //var valarray = new Array();
+                    // values.forEach((item) => {
+                    //     valarray.push(item.trim());
+                    // });
+                    values.forEach(function(item, index) {
+                        this[index] = item.trim();
+                    }, values);
+                    // console.log(e);
+                    console.log(values);
+                    // console.log(valarray);
+                }
+            });
+
+            // $(document).on('dblclick','tr[class^=row] td[class^=column]',function(e) {
+            //     // var pos = $(e.target).index()
+            //     // var name = $(e.target).closest("table").find("tr >td").eq(pos).text()
+            //     // console.log(name + ": " + $(e.target).text());
+            //     var values = $(e.target).parent().text().split('\n');
+            //     var valarray = new Array();
+            //     for(var i = 0; i < values.length; i++) {
+            //         valarray.push(values[i].trim());
+            //     }
+            //     console.log(e);
+            //     console.log(values);
+            //     console.log(valarray);
+            // });
+
         });
     </script>
 </body>
+
 </html>
